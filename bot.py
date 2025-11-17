@@ -6,6 +6,7 @@ from config import Config
 from gemini_client import GeminiClient
 from database import Database
 
+Config.validate()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
