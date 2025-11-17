@@ -5,7 +5,7 @@ chatgpt_bot:
 build: .
 container_name: chatgpt_telegram_bot
 restart: always
-env_file:
-- .env
+# env_file:
+# - .env
 volumes:
 - ./database.db:/app/database.db
