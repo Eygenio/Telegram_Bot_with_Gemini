@@ -3,7 +3,7 @@ version: '3.9'
 services:
 chatgpt_bot:
 build: .
-container_name: chatgpt_telegram_bot
+container_name: gemini_telegram_bot
 restart: always
 # env_file:
 # - .env
