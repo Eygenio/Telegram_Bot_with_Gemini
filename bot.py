@@ -7,6 +7,12 @@ from gemini_client import GeminiClient
 from database import Database
 
 
+if not Config.BOT_TOKEN:
+    raise ValueError("❌ TELEGRAM_TOKEN не найден в переменных окружения Railway")
+if not Config.GEMINI_API_KEY:
+    raise ValueError("❌ GEMINI_API_KEY не найден в переменных окружения Railway")
+
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
