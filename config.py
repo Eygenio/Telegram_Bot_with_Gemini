@@ -19,8 +19,9 @@ class Config:
     TEMPERATURE = float(os.getenv("TEMPERATURE", "0.7"))
     MAX_TOKENS = int(os.getenv("MAX_TOKENS", "1000"))
 
-    if not BOT_TOKEN:
-        raise ValueError("❌ TELEGRAM_TOKEN не найден в .env")
-
-    if not GEMINI_API_KEY:
-        raise ValueError("❌ GEMINI_API_KEY не найден в .env")
+    @classmethod
+    def validate(cls):
+        if not cls.BOT_TOKEN:
+            raise ValueError("❌ TELEGRAM_TOKEN не найден")
+        if not cls.GEMINI_API_KEY:
+            raise ValueError("❌ GEMINI_API_KEY не найден")
